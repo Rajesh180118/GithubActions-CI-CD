@@ -1,0 +1,15 @@
+name: Code
+on:  #trigger
+ push:  #Whenever code is pushed to github workflow automatically runs
+ #workflow_call: Whenever this workflow needs to be called from another workflow_call
+ # workflow_dispatch: whenever you want 
+
+jobs:
+  code-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the code
+        uses: actions/checkout@v7
+
+      - name: Print the message
+        uses: echo "Code Checkout"
